@@ -19,32 +19,6 @@ def search_country(data, country):
       dict_country = x
   return dict_country
 
-'''
-def population_by_country(data,country):
-  result = list(filter(lambda i: i['Country/Territory'] == country,data))
-  return result
-
-  
-
-def getb_colum(data):
-  country = []
-  labels = []
-  values = []
-  for x in data:
-    intToAdd = x['World Population Percentage']
-    country = x['Country/Territory']
-    labels.append(country)
-    values.append(float(intToAdd))
-  return labels, values
-
-
-def better_column(data):
-  continent = input('write a continent [Asia, Europe, Africa, Oceania, North America, South America] => ').title()
-  dataFilt = list(filter(lambda x: x['Continent'] == continent,data))
-  values = list(map(lambda x: float(x['World Population Percentage']),dataFilt))
-  labels = list(map(lambda y: y['Country/Territory'], dataFilt))
-  return  labels, values
-'''
 
 if __name__ == '__main__':
   print('hola')
