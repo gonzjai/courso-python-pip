@@ -8,7 +8,7 @@ def choose_option(userPoint, computerPoint, rounds):
   print('-' * 10)
 #select option
   options  = ('stone', 'paper', 'scissors')
-  user = input('Stone, Paper or scissors => ').lower()
+  user = input('Stone✊, Paper✋ or scissors✌️ => ').lower()
   computer = random.choice(options)
   if not user in options:
     print('This option is not defined. Try again...')
@@ -53,10 +53,10 @@ def check_rules(user, computer, userPoint, computerPoint, rounds):
 
 def check_winers(userPoint, computerPoint):
   if userPoint == 3:
-    print('user is the absolute winer.. ')
+    print('🧔🏽user is the absolute winer.. 🏆')
     print(f'Summary of the battle user wins {userPoint}   And computer wins {computerPoint}')
   elif computerPoint == 3:
-    print('computer is the absolute winer.. ')
+    print('🤖computer is the absolute winer.. 🏆')
     print(f'Summary of the battle user wins {userPoint}   And computer wins {computerPoint}')
 
 def run_game():
@@ -67,5 +67,10 @@ def run_game():
     user, computer = choose_option(userPoint, computerPoint, rounds)
     userPoint, computerPoint, rounds = check_rules(user, computer, userPoint, computerPoint, rounds)
     check_winers(userPoint, computerPoint)
+# starts the game
+ask_to_play = 'yes'
 
-run_game()
+while ask_to_play == "yes":
+  run_game()
+  ask_to_play = input('do you wanna play again? (yes or no) ').lower()
+  
