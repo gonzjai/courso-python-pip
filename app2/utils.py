@@ -14,11 +14,8 @@ def get_population(country_dict):
   return labels, values 
 
 def search_country(data, country):
-  for x in data:
-    if x['Country/Territory'] == country:
-      dict_country = x
-  return dict_country
-
+  country_dict = list(filter(lambda i: i['Country/Territory'] == country, data))
+  return country_dict
 
 if __name__ == '__main__':
   print('hola')
