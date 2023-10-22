@@ -13,16 +13,18 @@ def choose_option(userPoint, computerPoint, rounds):
   if not user in options:
     print('This option is not defined. Try again...')
     print(' ')
-    return None, None
-  return user, computer
+    return None, None, options
+  return user, computer, options
 
-def check_rules(user, computer, userPoint, computerPoint, rounds):
+def check_rules(user, computer, userPoint, computerPoint, rounds, options):
   #print(f'The user chose => {user}. the computer chose => {computer}')
   print(f'computadora = {computer}')
   print(' ')
-  if user == computer :
+  if user not in options:
+    print('aprende a escribir') 
+  elif user == computer :
     rounds += 1
-    print('empate')
+    print('Tie')
     print(' ')
     print(' ')
   elif user == 'stone' and computer == 'scissors':
@@ -64,8 +66,8 @@ def run_game():
   computerPoint = 0
   rounds = 1
   while (userPoint < 3) and (computerPoint < 3):
-    user, computer = choose_option(userPoint, computerPoint, rounds)
-    userPoint, computerPoint, rounds = check_rules(user, computer, userPoint, computerPoint, rounds)
+    user, computer, options= choose_option(userPoint, computerPoint, rounds)
+    userPoint, computerPoint, rounds = check_rules(user, computer, userPoint, computerPoint, rounds, options)
     check_winers(userPoint, computerPoint)
 # starts the game
 ask_to_play = 'yes'
